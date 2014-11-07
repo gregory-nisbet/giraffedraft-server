@@ -7,5 +7,5 @@ var app = express();
 routes(app, express);
 
 app.listen(port, function () {
-	console.log("now listening on ports over 9000.")
+	console.log("now listening on port: " + port);
 });
