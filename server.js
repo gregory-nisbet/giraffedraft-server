@@ -3,7 +3,7 @@ var routes = require('./server/config/routes');
 
 var port = process.env.PORT || 9001;
 
-var app = express();
+var app = module.exports = express();
 routes(app, express);
 
 app.listen(port, function () {
