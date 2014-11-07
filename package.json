@@ -14,6 +14,8 @@
     "chai": "^1.9.2",
     "express": "^4.10.1",
     "fantasysports": "^0.3.0",
+    "gulp": "^3.8.10",
+    "gulp-mocha": "^1.1.1",
     "mocha": "^2.0.1",
     "supertest": "^0.14.0"
   }
