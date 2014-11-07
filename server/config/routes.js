@@ -12,7 +12,15 @@ module.exports = function (app, express) {
 		next();
 	});
 
-	app.get("/api", function (req, res) {
-		res.sendFile(path.resolve(__dirname + "/../data/data.json"));
+	// chrome extension hits this link to get info on all players
+	app.get("/api/init", function (req, res) {
+		console.log("init api request");
+		res.sendFile(path.resolve(__dirname + "/../data/playerjson.json"));
+	});
+
+	// hit this link for suggestions
+	app.get("/api/suggest", function (req, res) {
+		console.log("suggest api request");
+		res.sendFile(path.resolve(__dirname + "/../data/playerjson.json"));
 	});
 };
