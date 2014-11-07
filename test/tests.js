@@ -19,10 +19,10 @@ describe('GET /', function() {
   });
 });
 
-describe('GET /api', function() {
+describe('GET /api/init', function() {
   it('should return JSON', function(done) {
     request(app)
-      .get('/api')
+      .get('/api/init')
       .set('Accept', 'application/json')
       .expect(200)
       .end(function(err, res) {
