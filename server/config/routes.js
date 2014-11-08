@@ -36,7 +36,8 @@ module.exports = function (app, express) {
 		});
 
 		req.on('end', function() {
-			data = JSON.stringify(req.body);
+			data = JSON.parse(data);
+			console.log(data);
 			var picks = picker.getPicks(data);
 			res.send(JSON.stringify(picks));
 		})
