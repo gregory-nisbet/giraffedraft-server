@@ -20,9 +20,7 @@ module.exports = function (app, express) {
 		fs.readFile(__dirname + "/../data/playerjson.txt", function(err,data){
 			var data = data + ''
 			var data = JSON.parse(data);
-			var picks = JSON.stringify(picker.getPicks(data));
-			console.log('get request', picks)
-			res.send(picks);
+			res.send(data);
 		})
 
 	});
