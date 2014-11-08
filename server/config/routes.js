@@ -20,10 +20,15 @@ module.exports = function (app, express) {
 
 	// hit this link for suggestions
 	app.post("/api/suggest", function (req, res) {
-		console.log(req.body);
+		var data = '';
 		req.on("data", function (stuff) {
-			res.send(stuff);
-			res.status(200);
+			data += stuff;
 		});
+
+		req.on('end', function() {
+			console.log(JSON.stringify(data));
+			res.send(data);
+			res.status(200);
+		})
 	});
 };
