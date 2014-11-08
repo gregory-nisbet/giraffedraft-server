@@ -19,8 +19,11 @@ module.exports = function (app, express) {
 	});
 
 	// hit this link for suggestions
-	app.get("/api/suggest", function (req, res) {
-		console.log("suggest api request");
-		res.sendFile(path.resolve(__dirname + "/../data/playerjson.txt"));
+	app.post("/api/suggest", function (req, res) {
+		console.log(req.body);
+		req.on("data", function (stuff) {
+			res.send(stuff);
+			res.status(200);
+		});
 	});
 };
